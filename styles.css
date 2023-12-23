@@ -1,0 +1,109 @@
+*{
+     margin:0;
+     padding:0;
+     font-family: Helvetica, sans-serif;
+     font-weight: bold;
+}
+
+html{
+     height: 100%;
+     background: linear-gradient(117deg, rgba(1,1,3,1) 0%,rgba(0,86,128,1) 68%,rgba(7,7,79,1) 100%);
+}
+
+header{
+     display: flex;
+     padding: 1.5dvh 0;
+     justify-content: space-around;
+     background-color: #1d1d1da1;
+     color:white;
+}
+header a{
+     color:white;
+     text-decoration: none;
+}
+header a:nth-child(2),
+header a:nth-child(3){
+     margin-left: 2em;
+}
+header a:hover{
+     text-decoration: underline;
+     color: rgba(0,86,128,1);
+}
+
+#content h1{
+     position: relative;
+     top: 35dvh;
+     color: burlywood;
+     font-size: 6em;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     text-align: center;
+}
+
+.planet,
+#blackhole{
+     display: inline-block;
+     position: relative;
+     background: no-repeat center;
+     background-size: cover;
+}
+
+#earth{
+     background-image: url(./images/terra.gif);
+     width: 5em; height: 5em;
+     animation: earth 10s linear infinite;
+}
+#saturn{
+     background-image: url(./images/aria.gif);
+     width: 30em; height: 30em;
+     animation: saturn 10s linear infinite;
+}
+
+#blackhole{
+     background-image: url(./images/devourer.gif);
+     width: 10em; height:10em;
+     top: -13.5dvh;
+     left: -0.5vw;
+     animation: blackhole 10s infinite;
+}
+
+#stars, #sparkle{
+     z-index: -99;
+     background-image: url(./images/stars.png);
+     width: 100%;
+     height: 100%;
+     display: inline-block;
+     position: absolute;
+     padding: 0;
+     margin: 0;
+     left: -100px;
+     top:-30px;
+     padding-bottom: 30px;
+     padding-right: 100px;
+}
+
+#sparkle{
+     z-index: -98;
+     background-image: url(./images/stars.png), url(./images/twinkling.png);
+     animation: sparkle 1s linear infinite;
+     background-blend-mode: overlay;
+}
+
+@keyframes earth{
+     0% {transform: translate(-500px,10px);}
+     100% {transform: translate(2000px,500px);}
+}
+@keyframes saturn{
+     0% {transform: translate(2000px,100px) rotate(0deg);}
+     100% {transform: translate(-500px,500px) rotate(30deg);}
+}
+@keyframes blackhole{
+     0%{transform: rotate(0deg) scale(1);}
+     50%{transform: rotate(-40deg) scale(1.2);}
+}
+@keyframes sparkle{
+     0%{opacity: 0; transform: scale(1.05)}
+     20%{opacity: 0.1; }
+     60%{opacity: 0; transform: scale(1);}
+     75%{opacity: 0.1;  }
+     100%{opacity: 0; transform: scale(100);}
+}
